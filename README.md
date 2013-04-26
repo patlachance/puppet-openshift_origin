@@ -49,6 +49,7 @@ this class.
 
     class { 'openshift_origin' :
       node_fqdn                  => "${hostname}.${domain}",
+      node_public_ip             => "${ipaddress}",
       cloud_domain               => 'openshift.local',
       dns_servers                => ['8.8.8.8'],
       os_unmanaged_users         => [],
@@ -71,6 +72,7 @@ this class.
 
     class { 'openshift_origin' :
       node_fqdn                  => "${hostname}.${domain}",
+      node_public_ip             => "${ipaddress}",
       cloud_domain               => 'openshift.local',
       dns_servers                => ['8.8.8.8'],
       os_unmanaged_users         => [],
@@ -110,6 +112,12 @@ The following lists all the class parameters the `openshift_origin` class accept
 ### node_fqdn
 
 The FQDN for this host
+
+### node_public_ip
+
+The public IP address for this host. Examples:
+  * node_public_ip => "${ipaddress}" # use host IP address
+  * node_public_ip => '192.168.1.1'  # define custom one
 
 ### create_origin_yum_repos
 
