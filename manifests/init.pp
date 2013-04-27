@@ -6,6 +6,8 @@
 # === Parameters:
 # [*node_fqdn*]
 #   The FQDN for this host
+# [*node_public_up*]
+#   The public IP for this host
 # [*create_origin_yum_repos*]
 #   True if OpenShift Origin dependencies and OpenShift Origin nightly yum repositories should be created on this node.
 # [*install_client_tools*]
@@ -128,6 +130,7 @@
 #
 class openshift_origin (
   $node_fqdn                  = $::fqdn,
+  $node_public_ip             = $::ipaddress,
   $create_origin_yum_repos    = true,
   $install_client_tools       = true,
   $enable_network_services    = true,

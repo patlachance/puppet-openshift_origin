@@ -3,8 +3,8 @@ package { 'bind':
 }
 
 exec { 'generate tsig key':
-  command => "/usr/bin/rm -rf /var/named/Kexample.com* ; \
-              /usr/sbin/dnssec-keygen -a HMAC-MD5 -b 512 -n USER -r /dev/urandom -K /var/named example.com",
+  command => "/usr/bin/env rm -rf /var/named/Kshift.labs.cloud.itisopen.net* ; \
+              /usr/sbin/dnssec-keygen -a HMAC-MD5 -b 512 -n USER -r /dev/urandom -K /var/named shift.labs.cloud.itisopen.net",
   require => Package['bind'],
 }
 
